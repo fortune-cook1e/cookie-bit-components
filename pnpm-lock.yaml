@@ -1,0 +1,90 @@
+dependencies:
+  react: registry.nlark.com/react/16.13.1
+  react-dom: registry.nlark.com/react-dom/16.13.1_react@16.13.1
+lockfileVersion: 5.2
+packages:
+  /loose-envify/1.4.0:
+    dependencies:
+      js-tokens: registry.nlark.com/js-tokens/4.0.0
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
+      tarball: loose-envify/download/loose-envify-1.4.0.tgz
+  /object-assign/4.1.1:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
+      tarball: object-assign/download/object-assign-4.1.1.tgz
+  /prop-types/15.7.2:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: registry.nlark.com/react-is/16.13.1
+    dev: false
+    resolution:
+      integrity: sha1-UsQedbjIfnK52TYOAga5ncv/psU=
+      tarball: prop-types/download/prop-types-15.7.2.tgz
+  registry.nlark.com/js-tokens/4.0.0:
+    dev: false
+    name: js-tokens
+    resolution:
+      integrity: sha1-GSA/tZmR35jjoocFDUZHzerzJJk=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/js-tokens/download/js-tokens-4.0.0.tgz
+    version: 4.0.0
+  registry.nlark.com/react-dom/16.13.1_react@16.13.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.7.2
+      react: registry.nlark.com/react/16.13.1
+      scheduler: registry.nlark.com/scheduler/0.19.1
+    dev: false
+    id: registry.nlark.com/react-dom/16.13.1
+    name: react-dom
+    peerDependencies:
+      react: ^16.13.1
+    resolution:
+      integrity: sha1-wb03MxoEhsB47lTEdAcgmTsuDn8=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/react-dom/download/react-dom-16.13.1.tgz
+    version: 16.13.1
+  registry.nlark.com/react-is/16.13.1:
+    dev: false
+    name: react-is
+    resolution:
+      integrity: sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/react-is/download/react-is-16.13.1.tgz
+    version: 16.13.1
+  registry.nlark.com/react/16.13.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.7.2
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    name: react
+    resolution:
+      integrity: sha1-LoGIIvGpdDEiwGPWQQ2FweOv5I4=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/react/download/react-16.13.1.tgz
+    version: 16.13.1
+  registry.nlark.com/scheduler/0.19.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+    dev: false
+    name: scheduler
+    resolution:
+      integrity: sha1-Tz4u0sGn1laB9MhU+oxaHMtA8ZY=
+      registry: https://registry.npm.taobao.org/
+      tarball: https://registry.nlark.com/scheduler/download/scheduler-0.19.1.tgz
+    version: 0.19.1
+specifiers:
+  react: 16.13.1
+  react-dom: 16.13.1

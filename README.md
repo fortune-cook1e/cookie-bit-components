@@ -1,1 +1,3 @@
-hello world
+# Cookies' Bit Common UI components
+
+## Bit
