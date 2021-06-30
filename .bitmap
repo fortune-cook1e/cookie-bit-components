@@ -2,8 +2,8 @@
 
 {
     "ui/overlay": {
-        "scope": "",
-        "version": "",
+        "scope": "fortune-cook1e.cookie-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "cookie-components/ui/overlay"
     },
