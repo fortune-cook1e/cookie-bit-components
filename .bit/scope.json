@@ -1,7 +1,7 @@
 {
-    "name": "github",
+    "name": "cookie-components",
     "remotes": {},
-    "version": "1.0.108",
+    "version": "1.0.111",
     "lanes": {
         "current": "master",
         "tracking": []
