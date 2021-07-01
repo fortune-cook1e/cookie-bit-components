@@ -7,7 +7,7 @@ export const BasicOverlay = () => {
     <div>
       <button onClick={() => setVisible(true)}>open overlay</button>
 
-      <Overlay visible={visible} onClick={() => setVisible(false)}></Overlay>
+      <Overlay visible={visible} onClose={() => setVisible(false)}></Overlay>
     </div>
   )
 }

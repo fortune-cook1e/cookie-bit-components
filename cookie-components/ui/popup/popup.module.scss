@@ -1,0 +1,50 @@
+.popup {
+  position: fixed;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-y: auto;
+  // background-color: #fff;
+
+  &__center {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  &__top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    &-round {
+      border-radius: 0 0 15px 15px;
+    }
+  }
+
+  &__left {
+    top: 0;
+    left: 0;
+    height: 100%;
+    &-round {
+      border-radius: 0 15px 15px 0;
+    }
+  }
+
+  &__right {
+    top: 0;
+    right: 0;
+    height: 100%;
+    &-round {
+      border-radius: 15px 0 0 15px;
+    }
+  }
+
+  &__bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    &-round {
+      border-radius: 15px 15px 0 0;
+    }
+  }
+}

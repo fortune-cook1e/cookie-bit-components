@@ -3,9 +3,15 @@
 {
     "ui/overlay": {
         "scope": "fortune-cook1e.cookie-components",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "cookie-components/ui/overlay"
+    },
+    "ui/popup": {
+        "scope": "fortune-cook1e.cookie-components",
+        "version": "0.0.1",
+        "mainFile": "index.ts",
+        "rootDir": "cookie-components/ui/popup"
     },
     "$schema-version": "14.9.0"
 }
