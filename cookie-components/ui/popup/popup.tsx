@@ -29,9 +29,18 @@ export type PopupProps = {
    */
   wrapperStyle?: CSSProperties
   /**
+   * class
+   */
+  wrapperClass?: string
+  /**
    * 遮罩层层级
    */
   overlayZIndex?: number
+  /**
+   * 遮罩层style
+   */
+  overlayStyle?: CSSProperties
+
   /**
    * 是否阻止滚动穿透
    */
@@ -49,7 +58,9 @@ export function Popup({
   position = 'center',
   round = true,
   wrapperStyle = {},
+  wrapperClass = '',
   overlayZIndex = 1,
+  overlayStyle = {},
   lockScroll = true,
   onClickOverlay = () => {},
   children
@@ -61,6 +72,7 @@ export function Popup({
           visible={visible}
           zIndex={overlayZIndex}
           lockScroll={lockScroll}
+          style={overlayStyle}
           onClose={onClickOverlay}
         />
       )
@@ -81,7 +93,8 @@ export function Popup({
             className={classnames({
               [styles.popup]: true,
               [styles[positionClass]]: true,
-              [styles[roundClass]]: round
+              [styles[roundClass]]: round,
+              [wrapperClass]: true
             })}
             variants={popupMotionVariants}
             initial='initial'

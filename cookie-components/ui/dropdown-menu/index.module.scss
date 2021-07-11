@@ -1,0 +1,34 @@
+$dropdown-item-z-index: 10;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.dropdown_menu {
+  &__bar {
+    position: relative;
+    display: flex;
+    height: 48px;
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgb(100 101 102 / 12%);
+    z-index: 2000;
+    &_opened {
+      z-index: calc($dropdown-item-z-index + 1);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-width: 0; // hack for flex ellipsis
+    cursor: pointer;
+
+    &:active {
+      opacity: var(--van-active-opacity);
+    }
+  }
+}

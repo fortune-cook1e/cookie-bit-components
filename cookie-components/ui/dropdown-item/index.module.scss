@@ -1,0 +1,16 @@
+$dropdowm-z-index: 10;
+
+.dropdown_item {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 408px;
+  z-index: $dropdowm-z-index;
+  overflow: hidden;
+
+  &__content {
+    position: absolute !important;
+    max-height: 80% !important;
+  }
+}
