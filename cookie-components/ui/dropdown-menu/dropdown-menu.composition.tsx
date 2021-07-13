@@ -11,13 +11,34 @@ const style: CSSProperties = {
 
 export const BasicDropdownMenu = () => {
   const [visible, setVisible] = useState<boolean>(false)
+  const [value, setValue] = useState<string>('haha')
+
+  const optionOne = [
+    {
+      value: 'haha',
+      title: '选择一'
+    },
+    {
+      value: 'hahss',
+      title: '选择二'
+    },
+    {
+      value: 'ha哈哈',
+      title: '选择三'
+    }
+  ]
+
+  const handleClick = (val: string) => {
+    setValue(val)
+  }
+
   return (
     <div>
-      <div style={style} onClick={() => setVisible(!visible)}></div>
+      <div style={style}></div>
       <div style={style}>state:{visible}</div>
       <div style={style}></div>
-      <DropdownMenu>
-        <DropdownItem visible={visible} />
+      <DropdownMenu value={value} onChange={handleClick}>
+        <DropdownItem options={optionOne} />
       </DropdownMenu>
     </div>
   )

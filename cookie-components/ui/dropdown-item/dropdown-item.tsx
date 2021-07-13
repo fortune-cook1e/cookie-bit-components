@@ -1,26 +1,30 @@
 import React, { CSSProperties, useState } from 'react'
 import styles from './index.module.scss'
 import { Popup } from '@fortune-cook1e/cookie-components.ui.popup'
+import { Option } from './option'
+
+type Option = {
+  value: string
+  title: string
+}
 
 export type DropdownItemProps = {
-  /**
-   * a text to be rendered in the component.
-   */
-  text?: string
-  visible: boolean
+  visible?: boolean
+  options: Option[]
+  offset?: number
+  activeValue?: string
+  onSelect?: (value: string) => void
 }
 
-const divStyle: CSSProperties = {
-  width: '100px',
-  height: '100px',
-  background: 'lightblue'
-}
-
-export function DropdownItem({ visible }: DropdownItemProps) {
-  // const [visible, setVisible] = useState<boolean>(false)
-
+export function DropdownItem({
+  visible,
+  options = [],
+  offset,
+  activeValue,
+  onSelect = () => {}
+}: DropdownItemProps) {
   return (
-    <div className={styles.dropdown_item}>
+    <div className={styles.dropdown_item} style={{ top: `${offset}px` }}>
       <Popup
         position='top'
         round={false}
@@ -29,9 +33,17 @@ export function DropdownItem({ visible }: DropdownItemProps) {
         overlayStyle={{ position: 'absolute' }}
         overlayZIndex={9}
       >
-        <div style={divStyle}>haha</div>
-        <div style={divStyle}>haha</div>
-        <div style={divStyle}>haha</div>
+        {options.map((option: Option) => {
+          return (
+            <Option
+              key={option.value}
+              value={option.value}
+              title={option.title}
+              active={option.value === activeValue}
+              onSelect={() => onSelect(option.value)}
+            />
+          )
+        })}
       </Popup>
     </div>
   )

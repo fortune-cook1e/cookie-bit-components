@@ -5,12 +5,34 @@ $dropdowm-z-index: 10;
   right: 0;
   left: 0;
   bottom: 0;
-  top: 408px;
+  // top: 408px;
   z-index: $dropdowm-z-index;
   overflow: hidden;
 
   &__content {
     position: absolute !important;
     max-height: 80% !important;
+  }
+
+  .option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgrey;
+    height: 50px;
+    &__title {
+      color: #000;
+    }
+    &__icon {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: lightpink;
+    }
+
+    &_active {
+      color: lightcoral;
+      background-color: lightsalmon;
+    }
   }
 }
