@@ -10,12 +10,18 @@ $dropdown-item-z-index: 10;
   &__bar {
     position: relative;
     display: flex;
+    align-items: center;
     height: 48px;
     background-color: #fff;
     box-shadow: 0 2px 12px rgb(100 101 102 / 12%);
     z-index: 2000;
     &_opened {
       z-index: calc($dropdown-item-z-index + 1);
+    }
+
+    .dropdown_menu__title {
+      flex: 1;
+      color: lightsalmon;
     }
   }
 

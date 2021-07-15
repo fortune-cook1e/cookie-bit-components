@@ -1,18 +1,18 @@
-import React, { CSSProperties, useState } from 'react'
+import React from 'react'
 import styles from './index.module.scss'
 import { Popup } from '@fortune-cook1e/cookie-components.ui.popup'
 import { Option } from './option'
 
-type Option = {
+export type OptionType = {
   value: string
   title: string
 }
 
 export type DropdownItemProps = {
   visible?: boolean
-  options: Option[]
+  options: OptionType[]
   offset?: number
-  activeValue?: string
+  value: string
   onSelect?: (value: string) => void
 }
 
@@ -20,7 +20,7 @@ export function DropdownItem({
   visible,
   options = [],
   offset,
-  activeValue,
+  value,
   onSelect = () => {}
 }: DropdownItemProps) {
   return (
@@ -33,13 +33,13 @@ export function DropdownItem({
         overlayStyle={{ position: 'absolute' }}
         overlayZIndex={9}
       >
-        {options.map((option: Option) => {
+        {options.map((option: OptionType) => {
           return (
             <Option
               key={option.value}
               value={option.value}
               title={option.title}
-              active={option.value === activeValue}
+              active={option.value === value}
               onSelect={() => onSelect(option.value)}
             />
           )

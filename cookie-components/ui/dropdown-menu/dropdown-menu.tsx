@@ -7,24 +7,19 @@ import React, {
 } from 'react'
 import styles from './index.module.scss'
 import classnames from 'classnames'
-import { OptionProps } from '../dropdown-item/option'
+import {
+  DropdownItemProps,
+  OptionType
+} from '@fortune-cook1e/cookie-components.ui.dropdown-item/index'
 
 export type DropdownMenuProps = {
   /**
    * a text to be rendered in the component.
    */
-  children: React.ReactNode
-
-  value: string
-
-  onChange?: (val: string) => void
+  children: any
 }
 
-export function DropdownMenu({
-  children,
-  value,
-  onChange = () => {}
-}: DropdownMenuProps) {
+export function DropdownMenu({ children }: DropdownMenuProps) {
   const [visible, setVisible] = useState<boolean>(false)
   const [offset, setOffset] = useState<number>(2000)
   const menuRef = useRef(null)
@@ -37,10 +32,37 @@ export function DropdownMenu({
     }
   }, [menuRef])
 
-  const renderDropdownItem = () => {}
+  const renderDropdownItem = () => {
+    return Children.map(children, (child: any) => {
+      const { props } = child
 
-  const handleChange = (value: string) => {
-    onChange(value)
+      const childProps = {
+        ...props,
+        offset,
+        // TODO: 这里需要做区分多个item的visible
+        visible
+      }
+      return cloneElement(child, childProps)
+    })
+  }
+
+  const renderTitle = () => {
+    return Children.map(children, child => {
+      const { options = [], value = '' } = child.props
+      const matchedOption = options.find(
+        (option: OptionType) => option.value === value
+      )
+      const title = matchedOption ? matchedOption.title : ''
+      return (
+        <div className={styles.dropdown_menu__title} onClick={handleTitleClick}>
+          {title}
+        </div>
+      )
+    })
+  }
+
+  const handleTitleClick = () => {
+    setVisible(!visible)
   }
 
   return (
@@ -50,27 +72,8 @@ export function DropdownMenu({
           [styles.dropdown_menu__bar_open]: true
         })}
       >
-        {Children.map(children, (child: any) => {
-          const { props } = child
-
-          const childProps = {
-            ...props,
-            offset,
-            activeValue: value,
-            visible:
-              visible &&
-              !!props.options.find(
-                (option: OptionProps) => option.value === value
-              ),
-
-            // TODO: 需要处理visible显示与隐藏问题
-            onSelect: handleChange
-          }
-
-          console.log({ childProps })
-
-          return cloneElement(child, childProps)
-        })}
+        {renderTitle()}
+        {renderDropdownItem()}
       </div>
     </div>
   )
