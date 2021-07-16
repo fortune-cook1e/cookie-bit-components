@@ -12,7 +12,6 @@ const style: CSSProperties = {
 export const BasicDropdownMenu = () => {
   const [visible, setVisible] = useState<boolean>(false)
   const [value, setValue] = useState<string>('haha')
-  const [value2, setValue2] = useState<string>('four')
 
   const optionOne = [
     {
@@ -29,20 +28,10 @@ export const BasicDropdownMenu = () => {
     }
   ]
 
-  const optionTwo = [
-    {
-      value: 'four',
-      title: '选择四'
-    },
-    {
-      value: 'five',
-      title: '选择五'
-    },
-    {
-      value: 'six',
-      title: '选择六'
-    }
-  ]
+  const handleOnchange = (val: string) => {
+    console.log(val)
+    setValue(val)
+  }
 
   return (
     <div>
@@ -50,8 +39,11 @@ export const BasicDropdownMenu = () => {
       <div style={style}>state:{visible}</div>
       <div style={style}></div>
       <DropdownMenu>
-        <DropdownItem value={value} options={optionOne} />
-        <DropdownItem value={value2} options={optionTwo} />
+        <DropdownItem
+          value={value}
+          options={optionOne}
+          onChange={handleOnchange}
+        />
       </DropdownMenu>
     </div>
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.scss'
 import { Popup } from '@fortune-cook1e/cookie-components.ui.popup'
 import { Option } from './option'
@@ -13,16 +13,23 @@ export type DropdownItemProps = {
   options: OptionType[]
   offset?: number
   value: string
-  onSelect?: (value: string) => void
+  onChange?: (value: string) => void
+  toggleVisible?: (bool: boolean) => void
 }
 
 export function DropdownItem({
-  visible,
+  visible = false,
   options = [],
   offset,
   value,
-  onSelect = () => {}
+  onChange = () => {},
+  toggleVisible
 }: DropdownItemProps) {
+  const handleChange = (value: string) => {
+    onChange(value)
+    toggleVisible(false)
+  }
+
   return (
     <div className={styles.dropdown_item} style={{ top: `${offset}px` }}>
       <Popup
@@ -40,7 +47,7 @@ export function DropdownItem({
               value={option.value}
               title={option.title}
               active={option.value === value}
-              onSelect={() => onSelect(option.value)}
+              onSelect={handleChange}
             />
           )
         })}

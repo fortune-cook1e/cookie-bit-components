@@ -14,10 +14,12 @@ import {
 
 export type DropdownMenuProps = {
   /**
-   * a text to be rendered in the component.
+   * children(DropdownItem)
    */
   children: any
 }
+
+// TODO: 目前下拉菜单只支持单个维度菜单选择，不支持多个
 
 export function DropdownMenu({ children }: DropdownMenuProps) {
   const [visible, setVisible] = useState<boolean>(false)
@@ -40,7 +42,8 @@ export function DropdownMenu({ children }: DropdownMenuProps) {
         ...props,
         offset,
         // TODO: 这里需要做区分多个item的visible
-        visible
+        visible,
+        toggleVisible: (bool: boolean) => setVisible(bool)
       }
       return cloneElement(child, childProps)
     })
@@ -49,6 +52,7 @@ export function DropdownMenu({ children }: DropdownMenuProps) {
   const renderTitle = () => {
     return Children.map(children, child => {
       const { options = [], value = '' } = child.props
+
       const matchedOption = options.find(
         (option: OptionType) => option.value === value
       )
