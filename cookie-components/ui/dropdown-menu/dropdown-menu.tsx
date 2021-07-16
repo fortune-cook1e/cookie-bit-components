@@ -7,10 +7,7 @@ import React, {
 } from 'react'
 import styles from './index.module.scss'
 import classnames from 'classnames'
-import {
-  DropdownItemProps,
-  OptionType
-} from '@fortune-cook1e/cookie-components.ui.dropdown-item/index'
+import { OptionType } from '@fortune-cook1e/cookie-components.ui.dropdown-item'
 
 export type DropdownMenuProps = {
   /**

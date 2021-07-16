@@ -1,12 +1,12 @@
-$dropdowm-z-index: 10;
-
 .dropdown_item {
+  --dropdowm-z-index: 10;
+
   position: fixed;
   right: 0;
   left: 0;
   bottom: 0;
   // top: 408px;
-  z-index: $dropdowm-z-index;
+  z-index: var(--dropdowm-z-index);
   overflow: hidden;
 
   &__content {

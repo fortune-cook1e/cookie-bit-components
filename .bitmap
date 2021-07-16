@@ -2,26 +2,26 @@
 
 {
     "ui/dropdown-item": {
-        "scope": "",
-        "version": "",
+        "scope": "fortune-cook1e.cookie-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "cookie-components/ui/dropdown-item"
     },
     "ui/dropdown-menu": {
-        "scope": "",
-        "version": "",
+        "scope": "fortune-cook1e.cookie-components",
+        "version": "0.0.1",
         "mainFile": "index.ts",
         "rootDir": "cookie-components/ui/dropdown-menu"
     },
     "ui/overlay": {
         "scope": "fortune-cook1e.cookie-components",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "mainFile": "index.ts",
         "rootDir": "cookie-components/ui/overlay"
     },
     "ui/popup": {
         "scope": "fortune-cook1e.cookie-components",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "mainFile": "index.ts",
         "rootDir": "cookie-components/ui/popup"
     },
